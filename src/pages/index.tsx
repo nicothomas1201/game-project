@@ -1,4 +1,3 @@
-import { Home } from './Home'
-import { Test } from './Test'
-
-export { Home, Test }
+export { Home } from './Home'
+export { Arkanoid } from './Arkanoid'
+export { PingPong } from './PingPong'

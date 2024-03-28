@@ -6,7 +6,7 @@ import {
 import { createRef, useCallback } from 'react'
 import { Group, Vector3 } from 'three'
 import { useGLTF } from '@react-three/drei'
-import modelGlb from '../assets/models/pingpong.glb'
+import modelGlb from '../../assets/models/pingpong.glb'
 import { useFrame } from '@react-three/fiber'
 import { easing } from 'maath'
 
@@ -38,9 +38,10 @@ export function Paddle({ vector = new Vector3(), direction = new Vector3() }) {
     paddle.current.setNextKinematicRotation({
       x: 0,
       y: 0,
-      z: (state.pointer.x * Math.PI) / 10,
+      z: (state.pointer.x * Math.PI) / 10, // multiplicarlo por PI sirve para que rote mejor,
       w: 1,
     })
+    // Necesario para ver los elementos de forma mas fluid
     easing.damp3(model.current.position, [0, 0, 0], 0.2, delta)
     easing.damp3(
       state.camera.position,

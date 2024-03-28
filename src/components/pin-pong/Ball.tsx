@@ -6,8 +6,10 @@ import {
   CuboidCollider,
 } from '@react-three/rapier'
 import { createRef, useCallback } from 'react'
+import type { ModelProps } from '../dto'
+import { Sphere } from '../elements'
 
-export function Ball({ ...props }) {
+export function Ball({ ...props }: ModelProps) {
   const ball = createRef<RapierRigidBody>()
 
   const { viewport } = useThree()
@@ -15,7 +17,6 @@ export function Ball({ ...props }) {
   const onCollisionEnter = useCallback(() => {
     if (!ball.current) return
 
-    console.log('ball exist')
     ball.current.setTranslation({ x: 0, y: 5, z: 0 }, false)
     ball.current.setLinvel({ x: 0, y: 5, z: 0 }, false)
   }, [])
@@ -32,10 +33,7 @@ export function Ball({ ...props }) {
         enabledTranslations={[true, true, false]}
       >
         <BallCollider args={[0.5]}></BallCollider>
-        <mesh castShadow receiveShadow>
-          <sphereGeometry args={[0.5, 64, 64]} />
-          <meshStandardMaterial color="white" />
-        </mesh>
+        <Sphere castShadow receiveShadow args={[0.5, 64, 64]} color="white" />
       </RigidBody>
       <RigidBody
         type="fixed"
