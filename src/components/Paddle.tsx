@@ -16,7 +16,8 @@ export function Paddle({ vector = new Vector3(), direction = new Vector3() }) {
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
   const { nodes, materials } = useGLTF(modelGlb) as any
 
-  const contactForce = useCallback(payload => {
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  const contactForce = useCallback((payload: any) => {
     if (!model.current) return
 
     model.current.position.y = -payload.totalForceMagnitude / 10000
