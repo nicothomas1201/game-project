@@ -1,5 +1,5 @@
 import { Route, BrowserRouter, Routes } from 'react-router-dom'
-import { Home, Arkanoid, PingPong } from './pages'
+import { Home, Arkanoid, PingPong, Game } from './pages'
 
 function App() {
   return (
@@ -8,6 +8,7 @@ function App() {
         <Route path="/" element={<Home />} />
         <Route path="/ping-pong" element={<PingPong />} />
         <Route path="/arkanoid" element={<Arkanoid />} />
+        <Route path="/game" element={<Game />} />
       </Routes>
     </BrowserRouter>
   )

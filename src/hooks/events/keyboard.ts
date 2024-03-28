@@ -8,11 +8,7 @@ interface ActionsKeyboard {
   KeyA: string
   KeyD: string
   Space: string
-  Digit1: string
-  Digit2: string
-  Digit3: string
-  Digit4: string
-  Digit5: string
+  Shift: string
 }
 
 const ACTIONS_KEYBOARD_MAP: ActionsKeyboard = {
@@ -21,11 +17,7 @@ const ACTIONS_KEYBOARD_MAP: ActionsKeyboard = {
   KeyA: 'moveLeft',
   KeyD: 'moveRight',
   Space: 'jump',
-  Digit1: 'dirt',
-  Digit2: 'grass',
-  Digit3: 'glass',
-  Digit4: 'wood',
-  Digit5: 'log',
+  Shift: 'spring',
 }
 
 export function useKeyBoard() {
